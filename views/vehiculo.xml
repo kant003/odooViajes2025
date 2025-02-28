@@ -1,0 +1,71 @@
+<odoo>
+    <data>
+
+         <record model="ir.ui.view" id="vehiculo_search_view">
+            <field name="name">vehiculo.search</field>
+            <field name="model">viajes.vehiculo</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="marca" />
+                    <field name="descripcion" />
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="vehiculo_form_view">
+            <field name="name">vehiculo.form</field>
+            <field name="model">viajes.vehiculo</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de Vehiculo">
+                    <sheet>
+                        <group>
+                            <field name="modelo" />
+                            <field name="marca" />
+                            <field name="propietario_id"/>
+                            <field name="matricula"/>
+                        </group>
+                        <notebook>
+                            <page string="Descripcion">
+                                <field name="descripcion"/>
+                            </page>
+                            <page string="Acerca de">
+                                Esto es un ejemplo
+                            </page>
+                             <page string="Viajes">
+                                <field name="viaje_ids">
+                                    <list string="Viajes registrados">
+                                        <field name="titulo"/>
+                                        <field name="conductor_id"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+         <record model="ir.ui.view" id="vehiculo_list_view">
+            <field name="name">vehiculo.list</field>
+            <field name="model">viajes.vehiculo</field>
+            <field name="arch" type="xml">
+                <list string="Vehiculo List">
+                    <field name="modelo" />
+                    <field name="marca" />
+                    <field name="propietario_id" />
+                    <field name="matricula"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="vehiculo_list_action">
+            <field name="name">Vehiculos</field>
+            <field name="res_model">viajes.vehiculo</field>
+            <field name="view_mode">list,form,search</field>
+<!--        <field name="context" eval="{'search_default_my_vehiculos': 1}" /> -->
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_smiling_face">Crear el primer vehiculo</p>
+            </field>
+        </record>
+    </data>
+</odoo>

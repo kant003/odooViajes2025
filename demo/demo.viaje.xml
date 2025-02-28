@@ -1,0 +1,31 @@
+<odoo>
+    <data>
+        <!-- Datos de demostración para Viajes -->
+        <record id="viaje_demo_1" model="viajes.viaje">
+            <field name="titulo">Viaje a París</field>
+            <field name="fecha_inicio">2025-06-01</field>
+            <field name="duracion">5</field>
+            <field name="plazas">20</field>
+            <field name="estado">planeado</field>
+            <field name="vehiculo_id" ref="vehiculo_panda"/>
+        </record>
+
+        <record id="viaje_demo_2" model="viajes.viaje">
+            <field name="titulo">Excursión a la Montaña</field>
+            <field name="fecha_inicio">2025-03-15</field>
+            <field name="duracion">2</field>
+            <field name="plazas">15</field>
+            <field name="estado">en_curso</field>
+            <field name="vehiculo_id" ref="vechiculo_tesla"/>
+        </record>
+
+        <record id="viaje_demo_3" model="viajes.viaje">
+            <field name="titulo">Tour por la Costa</field>
+            <field name="fecha_inicio">2025-01-20</field>
+            <field name="duracion">7</field>
+            <field name="plazas">25</field>
+            <field name="estado">finalizado</field>
+            <field name="vehiculo_id" ref="vehiculo_panda"/>
+        </record>
+    </data>
+</odoo>

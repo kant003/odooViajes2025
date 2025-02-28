@@ -1,0 +1,13 @@
+<odoo>
+    <data>
+        <record id="vehiculo_panda" model="viajes.vehiculo">
+            <field name="modelo">Panda</field>
+            <field name="marca">Seat</field>
+        </record>
+        <record id="vechiculo_tesla" model="viajes.vehiculo">
+            <field name="modelo">Model S</field>
+            <field name="marca">Tesla</field>
+        </record>
+
+       </data>
+</odoo>

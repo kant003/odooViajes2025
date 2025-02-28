@@ -1,0 +1,133 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="viaje_kanban_view">
+            <field name="name">viaje.kanban</field>
+            <field name="model">viajes.viaje</field>
+            <field name="arch" type="xml">
+                <kanban default_group_by="estado">
+                    <field name="titulo" />
+                    <field name="fecha_inicio" />
+                    <field name="estado" />
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card">
+                                <strong>
+                                    <t t-esc="record.titulo.value" />
+                                </strong>
+                                <br />
+                                <span>Inicio: <t t-esc="record.fecha_inicio.value" /></span>
+                                <br />
+                                <span>Estado: <t t-esc="record.estado.value" /></span>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="viaje_pivot_view">
+            <field name="name">viaje.pivot</field>
+            <field name="model">viajes.viaje</field>
+            <field name="arch" type="xml">
+                <pivot>
+                    <field name="fecha_inicio" type="row" />
+                    <field name="duracion" type="measure" />
+                </pivot>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="viaje_graph_view">
+            <field name="name">viaje.graph</field>
+            <field name="model">viajes.viaje</field>
+            <field name="arch" type="xml">
+                <graph type="bar">
+                    <field name="estado" type="row" />
+                    <field name="id" type="measure" />
+                </graph>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="viaje_calendar_view">
+            <field name="name">viaje.calendar</field>
+            <field name="model">viajes.viaje</field>
+            <field name="arch" type="xml">
+                <calendar date_start="fecha_inicio" color="estado">
+                    <field name="titulo" />
+                </calendar>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="viaje_search_view">
+            <field name="name">viaje.search</field>
+            <field name="model">viajes.viaje</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="titulo" />
+                </search>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="viaje_list_view">
+            <field name="name">viaje.list</field>
+            <field name="model">viajes.viaje</field>
+            <field name="arch" type="xml">
+                <list string="Viaje List">
+                    <field name="titulo" />
+                    <field name="duracion" />
+                    <field name="vehiculo_id" />
+                    <field name="estado" />
+                    <field name="plazas_ocupadas" widget="progressbar"/>
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="viaje_form_view">
+            <field name="name">viaje.form</field>
+            <field name="model">viajes.viaje</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de Viajes">
+                    <sheet>
+                        <group string="General">
+                            <field name="vehiculo_id" />
+                            <field name="titulo" />
+                            <field name="conductor_id" />
+                            <field name="estado" />
+                            <field name="estado_display" />
+                            <field name="finalizado"/>
+                        </group>
+                        <group string="Calendario">
+                            <field name="fecha_inicio" />
+                            <field name="fecha_fin"/>
+                            <field name="duracion" />
+                            <field name="plazas" />
+                            <field name="plazas_ocupadas" widget="progressbar"/>
+                        </group>
+                        
+                        <notebook>
+                            <page string="pasajeros">
+                                <field name="pasajeros_ids" />
+                            </page>
+                            <page string="Paradas">
+                                <field name="paradas_ids">
+                                    <list string="Paradas registrados">
+                                        <field name="titulo"/>
+                                        <field name="fecha"/>
+                                        <field name="localizacion"/>
+                                    </list>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="viaje_list_action">
+            <field name="name">Viajes</field>
+            <field name="res_model">viajes.viaje</field>
+            <field name="view_mode">list,form,search,calendar,graph,pivot,kanban</field>
+        </record>
+
+    </data>
+</odoo>

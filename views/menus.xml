@@ -1,0 +1,21 @@
+<odoo>
+    <data>
+        <menuitem id="main_viajes_menu" name="Viajes" />
+
+        <menuitem id="viajes_menu" name="Elementos" parent="main_viajes_menu" />
+
+        <menuitem id="vehiculo_menu" name="Vehiculos" parent="viajes_menu" action="vehiculo_list_action" />
+
+        <menuitem id="viaje_menu" name="Viajes" parent="viajes_menu" action="viaje_list_action" />
+
+        <menuitem id="configuration_menu" name="Configuration" parent="main_viajes_menu" />
+        
+        <menuitem id="contact_menu" name="Viajeros" parent="configuration_menu" action="contact_list_action" />
+
+        
+        
+        <menuitem id="parada_menu" name="Paradas" parent="viajes_menu" action="parada_list_action" />
+
+
+    </data>
+</odoo>
