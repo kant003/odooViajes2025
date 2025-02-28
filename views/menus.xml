@@ -15,6 +15,7 @@
         
         
         <menuitem id="parada_menu" name="Paradas" parent="viajes_menu" action="parada_list_action" />
+        <menuitem id="revision_menu" name="Revisiones" parent="viajes_menu" action="revision_list_action" />
 
 
     </data>

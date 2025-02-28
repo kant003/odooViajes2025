@@ -31,3 +31,8 @@ class Vehiculo(models.Model):
          'UNIQUE(matricula)',
          "La matricula tiene que ser única"),
     ]
+
+
+    revision_ids = fields.One2many('viajes.revision', 'vehiculo_id', string="Revisiones del coche")
+    
+    

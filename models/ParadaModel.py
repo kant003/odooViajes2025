@@ -1,4 +1,4 @@
-from odoo import fields, models
+from odoo import fields, models, api
 
 class Parada(models.Model):
     _name = "viajes.parada"
@@ -11,3 +11,9 @@ class Parada(models.Model):
     localizacion = fields.Char(string="Localización")
 
     viaje_id = fields.Many2one('viajes.viaje', ondelete='cascade', string="Viaje", required=True)
+    completada = fields.Boolean(string="Parada completada", default=False)
+
+    @api.depends('completada')
+    def marcar_completada(self):
+        for record in self:
+            record.completada = not record.completada

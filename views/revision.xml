@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+
+    
+
+        <record model="ir.ui.view" id="revision_form_view">
+            <field name="name">revision.form</field>
+            <field name="model">viajes.revision</field>
+            <field name="arch" type="xml">
+                <form string="Formulario de Revision">
+                    <sheet>
+                        <group>
+                            <field name="titulo" />
+                            <field name="fecha" />
+                            <field name="superada" />
+                            <field name="vehiculo_id" />
+                            
+                        </group>
+                        <notebook>
+                            <page string="Descripcion">
+                                <field name="descripcion" />
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="revision_list_view">
+            <field name="name">revision.list</field>
+            <field name="model">viajes.revision</field>
+            <field name="arch" type="xml">
+                <list string="Revision List">
+                    <field name="titulo" />
+                    <field name="fecha" />
+                    <field name="superada" />
+                </list>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="revision_list_action">
+            <field name="name">Revisiones</field>
+            <field name="res_model">viajes.revision</field>
+            <field name="view_mode">list,form</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_smiling_face">Crear tu primera revisión</p>
+            </field>
+        </record>
+    </data>
+</odoo>

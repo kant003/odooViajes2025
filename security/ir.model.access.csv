@@ -2,3 +2,4 @@ id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
 access_viajes_vehiculo,viajes.vehiculo,model_viajes_vehiculo,,1,1,1,1
 access_viajes_viaje,viajes.viaje,model_viajes_viaje,,1,1,1,1
 access_viajes_parada,viajes.parada,model_viajes_parada,,1,1,1,1
+access_viajes_revision,viajes.revision,model_viajes_revision,,1,1,1,1

@@ -39,6 +39,15 @@
                                     </list>
                                 </field>
                             </page>
+                             <page string="Revisiones">
+                                <field name="revision_ids">
+                                    <list string="Revisiones registradas">
+                                        <field name="titulo"/>
+                                        <field name="fecha"/>
+                                        <field name="superada"/>
+                                    </list>
+                                </field>
+                            </page>
                         </notebook>
                     </sheet>
                 </form>

@@ -27,6 +27,7 @@
         'views/viaje.xml',
         'views/partner.xml',
         'views/parada.xml',
+        'views/revision.xml',
         'views/menus.xml'
     ],
     # only loaded in demonstration mode

@@ -35,6 +35,9 @@
                             <field name="fecha" />
                             <field name="duracion" />
                             <field name="localizacion" />
+                            <field name="completada" />
+                            <button name="marcar_completada" type="object" string="Completar"/>
+
                         </group>
                         <notebook>
                             <page string="Descripcion">

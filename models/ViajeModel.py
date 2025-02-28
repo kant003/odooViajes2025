@@ -96,3 +96,7 @@ class Viaje(models.Model):
     paradas_ids = fields.One2many('viajes.parada', 'viaje_id', 
                                   string="Paradas del viaje")
     
+    @api.depends('titulo')
+    def _compute_display_name(self):
+        for r in self:
+            r.display_name = r.titulo
